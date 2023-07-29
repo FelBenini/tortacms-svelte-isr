@@ -1,6 +1,12 @@
 import { TortaController } from "$lib/server/tortacms";
 import { error } from '@sveltejs/kit';
 
+export const config = {
+	isr: {
+		expiration: 10
+	}
+};
+
 type Params = {
   day: string,
   month: string,
