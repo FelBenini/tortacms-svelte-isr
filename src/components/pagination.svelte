@@ -26,6 +26,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 12px;
+    align-self: flex-end;
     gap: 12px;
     & p {
       background-color: rgb(211, 77, 0);
