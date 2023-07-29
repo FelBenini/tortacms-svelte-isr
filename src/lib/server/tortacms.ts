@@ -13,7 +13,10 @@ export class TortaController {
 
   public static fetchSinglePost = async (day: string, month: string, year: string, slug: string) => {
     const response = await fetch(`${TORTACMS_HOST}/api/post/${day}/${month}/${year}/${slug}`)
-    const post = await response.json()
-    return post
+    if (response.status === 200) {
+      const post = await response.json()
+      return post
+    }
+    return null
   }
 }
