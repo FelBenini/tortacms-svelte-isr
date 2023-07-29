@@ -9,7 +9,6 @@
   @import url('https://fonts.googleapis.com/css2?family=REM:wght@300;500;700&display=swap');
   :global(*) {
     font-family: 'REM', sans-serif;
-    margin: 0;
   }
   :global(p) {
     font-weight: 300;
