@@ -16,16 +16,17 @@
 
 <style>
   .bigTitle {
-    margin: 2.5rem auto;
+    margin: 2.3rem auto;
     width: 100%;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   #bgImg {
     max-width: 100%;
     margin: 0 auto;
+    margin-top: -0.6rem;
     display: block;
-    margin-bottom: 3rem;
+    margin-bottom: 2.3rem;
   }
 
   div {

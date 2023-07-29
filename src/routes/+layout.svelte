@@ -44,12 +44,19 @@
 		font-weight: 500;
 	}
 
+  :global(li) {
+    margin: 16px 0px;
+  }
+  :global(a) {
+    color: #c04600;
+  }
 	:global(body) {
 		margin: 0;
 		min-height: 100%;
 	}
 	:global(html) {
 		min-height: 100%;
+    font-size: 112.5%;
 	}
 
   :global(#nprogress .bar) {
