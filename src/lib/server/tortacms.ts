@@ -19,4 +19,13 @@ export class TortaController {
     }
     return null
   }
+
+  public static fetchSinglePage = async (slug: string) => {
+    const response = await fetch(`${TORTACMS_HOST}/api/page/${slug}`)
+    if (response.status !== 200) {
+      return null
+    }
+    const page = await response.json()
+    return page
+  }
 }

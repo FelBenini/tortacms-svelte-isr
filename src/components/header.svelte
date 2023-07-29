@@ -6,7 +6,7 @@
     </a>
   </h3>
   <h3>
-    <a href="/about">About</a>
+    <a href="/About">About</a>
   </h3>
 </nav>
 </header>
