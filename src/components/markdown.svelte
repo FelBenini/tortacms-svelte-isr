@@ -31,9 +31,7 @@
 
 <style>
   div {
-    width: 95%;
-    max-width: 1000px;
-    margin: 0 auto;
+    width: 100%;
   }
   :global(.markdownDiv pre) {
     margin: 20px 0;

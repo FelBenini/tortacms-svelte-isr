@@ -4,7 +4,6 @@ export class TortaController {
   public static fetchAllPosts = async () => {
     const response = await fetch(`${TORTACMS_HOST}/api/posts`)
     const posts = await response.json()
-    console.log(posts)
     return {
       posts: posts.posts,
       pages: posts.number_of_pagination,
