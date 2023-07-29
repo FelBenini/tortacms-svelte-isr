@@ -1,12 +1,14 @@
 <header>
+  <nav>
 	<h3>
     <a href="/">
       <img alt="Svelte + tortaCMS" src="/svelteplustorta.svg" />
     </a>
   </h3>
-  <h2>
+  <h3>
     <a href="/about">About</a>
-  </h2>
+  </h3>
+</nav>
 </header>
 
 <style lang="scss">
@@ -19,9 +21,16 @@
 		display: flex;
 		background-color: white;
 		z-index: 99;
-		align-items: center;
-    justify-content: space-between;
 		padding: 6px 12px;
+    & nav {
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1150px;
+      margin: 0 auto;
+      height: 56px;
+      display: flex;
+    }
     & a {
       color: rgb(31, 31, 31);
       font-weight: 300;
