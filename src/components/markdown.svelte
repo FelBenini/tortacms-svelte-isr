@@ -1,8 +1,13 @@
 <script lang="ts">
   import { afterUpdate } from 'svelte';
+  import Prism from 'prismjs';
   import Showdown from 'showdown';
-  import hljs from 'highlight.js';
-  import 'highlight.js/styles/a11y-dark.css';
+  import 'prismjs/themes/prism.css';
+  import 'prismjs/components/prism-javascript';
+  import 'prismjs/components/prism-jsx';
+  import 'prismjs/components/prism-sql';
+  import 'prismjs/components/prism-typescript';
+  import 'prismjs/components/prism-css';
 
   const converter = new Showdown.Converter();
   export let source: string;
@@ -10,19 +15,20 @@
   let parsedMarkdown = '';
   
   function highlightCodeBlocks() {
-    const codeBlocks = Array.from(document.querySelectorAll('pre code'));
-    codeBlocks.forEach((block) => {
-      hljs.highlightElement(block as HTMLElement);
-      console.log('blcok!')
+    const codeBlocks = document.querySelectorAll('pre[data-language]');
+    codeBlocks.forEach((codeBlock) => {
+      const language = codeBlock.getAttribute('data-language');
+      if (language) {
+        codeBlock.classList.add(`language-${language}`);
+        Prism.highlightElement(codeBlock);
+      }
     });
   }
 
   $: {
     parsedMarkdown = converter.makeHtml(source)
   }
-  afterUpdate(() => {
-    highlightCodeBlocks()
-  })
+  afterUpdate(highlightCodeBlocks)
 </script>
 
 <div class='markdownDiv'>
