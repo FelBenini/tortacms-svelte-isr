@@ -55,14 +55,17 @@
 	:global(body) {
 		margin: 0;
 		min-height: 100%;
+    background: url('/background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 	}
 	:global(html) {
 		min-height: 100%;
-    font-size: 112.5%;
 	}
 
   :global(#nprogress .bar) {
-    background: rgb(224, 90, 13) !important;
+    background: rgb(235, 86, 0) !important;
   }
 
 </style>

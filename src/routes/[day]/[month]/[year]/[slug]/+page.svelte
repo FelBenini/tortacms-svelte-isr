@@ -48,5 +48,6 @@
     padding: 0px 2%;
     padding-top: 56px;
     padding-bottom: 16px;
+    background-color: white;
   }
 </style>
