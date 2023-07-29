@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang='ts'>
   import { afterUpdate } from 'svelte';
   import Prism from 'prismjs';
   import Showdown from 'showdown';
@@ -13,22 +13,13 @@
   export let source: string;
 
   let parsedMarkdown = '';
-  
-  function highlightCodeBlocks() {
-    const codeBlocks = document.querySelectorAll('pre[data-language]');
-    codeBlocks.forEach((codeBlock) => {
-      const language = codeBlock.getAttribute('data-language');
-      if (language) {
-        codeBlock.classList.add(`language-${language}`);
-        Prism.highlightElement(codeBlock);
-      }
-    });
-  }
 
   $: {
     parsedMarkdown = converter.makeHtml(source)
   }
-  afterUpdate(highlightCodeBlocks)
+  afterUpdate(() => {
+    Prism.highlightAll()
+  })
 </script>
 
 <div class='markdownDiv'>
