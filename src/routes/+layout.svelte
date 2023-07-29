@@ -55,10 +55,6 @@
 	:global(body) {
 		margin: 0;
 		min-height: 100%;
-    background: url('/background.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
 	}
 	:global(html) {
 		min-height: 100%;

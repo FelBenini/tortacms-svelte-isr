@@ -5,19 +5,23 @@
 </script>
 
 <section>
-  <h1>Latest Posts</h1>
+  <h1>Latest Posts <img src='/timeicon.svg' alt='Clock icon' /></h1>
+  <div>
   {#each data.posts as post}
 	  <Postcard url={post.postUrl} title={post.title} img={post.backgroundImage} />
   {/each}
+</div>
 </section>
 
 <style lang='scss'>
 	section {
     & h1 {
       width: 100%;
-      font-size: 3rem;
       font-weight: 300;
-      margin: 12px;
+      font-size: 2.3rem;
+      & img {
+        margin-bottom: -8px;
+      }
     }
 		width: 92%;
 		max-width: 1150px;
@@ -29,10 +33,13 @@
 		padding-top: 80px;
 		padding-bottom: 16px;
 		background-color: white;
-    gap: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    & div {
+      gap: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      width: 100%;
+    }
 	}
 </style>
