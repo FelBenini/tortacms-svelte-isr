@@ -40,7 +40,7 @@
 
   section {
     width: 92%;
-    max-width: 1050px;
+    max-width: 1150px;
     margin: 0 auto;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     min-height: calc(100dvh - 72px);
