@@ -15,17 +15,19 @@
 
 <section>
 <h1 class="bigTitle">{data.title}</h1>
-
+{#if data.summary}
+  <p class='summary'>{data.summary}</p>
+{/if}
 {#if data.backgroundImage}
   <img id='bgImg' src={data.backgroundImage} alt=''/>
 {/if}
-
 <Markdown {source}/>
 </section>
 
 <style>
   .bigTitle {
-    margin: 2.3rem auto;
+    margin: 0 auto;
+    margin-top: 2.3rem;
     width: 100%;
     font-size: 2.5rem;
   }
@@ -33,14 +35,21 @@
   #bgImg {
     max-width: 100%;
     margin: 0 auto;
-    margin-top: -0.6rem;
+    margin-top: 1rem;
     display: block;
     margin-bottom: 2.3rem;
+    border-radius: 16px;
   }
 
+  .summary {
+    color: rgb(48, 48, 48);
+    width: 90%;
+    margin: 1.6rem auto;
+    font-style: italic;
+  }
   section {
     width: 92%;
-    max-width: 1150px;
+    max-width: 1000px;
     margin: 0 auto;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     min-height: calc(100dvh - 72px);
