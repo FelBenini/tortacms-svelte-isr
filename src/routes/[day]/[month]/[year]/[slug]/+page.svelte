@@ -4,6 +4,15 @@
   const source = data.content
 </script>
 
+<svelte:head>
+  <title>{data.title}</title>
+  <meta name="description" content={data.summary} />
+  <meta
+  name="robots"
+  content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+  />
+</svelte:head>
+
 <div>
 <h1 class="bigTitle">{data.title}</h1>
 
