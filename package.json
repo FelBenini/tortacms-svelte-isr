@@ -30,8 +30,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@types/nprogress": "^0.2.0",
 		"@types/showdown": "^2.0.1",
 		"highlight.js": "^11.8.0",
+		"nprogress": "^0.2.0",
 		"showdown": "^2.1.0"
 	}
 }
