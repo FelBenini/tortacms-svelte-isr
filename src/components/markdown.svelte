@@ -2,12 +2,11 @@
   import { afterUpdate } from 'svelte';
   import Prism from 'prismjs';
   import Showdown from 'showdown';
-  import 'prismjs/themes/prism.css';
   import 'prismjs/components/prism-javascript';
   import 'prismjs/components/prism-jsx';
   import 'prismjs/components/prism-sql';
   import 'prismjs/components/prism-typescript';
-  import 'prismjs/components/prism-css';
+  import './syntaxhighlight.css'
 
   const converter = new Showdown.Converter();
   export let source: string;
