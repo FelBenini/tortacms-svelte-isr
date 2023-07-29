@@ -28,4 +28,15 @@ export class TortaController {
     const page = await response.json()
     return page
   }
+
+  public static searchForPosts = async (query: string, page: string | number = 1) => {
+    const response = await fetch(`${TORTACMS_HOST}/api/posts?search=${query}&page=${page}`)
+    const posts = await response.json()
+    return {
+      posts: posts.posts,
+      pages: posts.number_of_pagination,
+      number_of_posts: posts.number_of_posts,
+      query: query
+    }
+  }
 }

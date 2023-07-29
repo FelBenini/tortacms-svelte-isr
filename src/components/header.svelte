@@ -1,14 +1,28 @@
+<script lang="ts">
+	import { goto } from '$app/navigation';
+	let query = '';
+	function redirect(e: Event) {
+    e.preventDefault()
+    goto(`/search/${query}`)
+  }
+</script>
+
 <header>
-  <nav>
-	<h3>
-    <a href="/">
-      <img alt="Svelte + tortaCMS" src="/svelteplustorta.svg" />
-    </a>
-  </h3>
-  <h3>
-    <a href="/About">About</a>
-  </h3>
-</nav>
+	<nav>
+		<h3>
+			<a href="/">
+				<img alt="Svelte + tortaCMS" src="/svelteplustorta.svg" />
+			</a>
+		</h3>
+		<span>
+      <form on:submit={redirect}>
+        <input type="search" placeholder="Search here..." on:input={(e) => query = e.currentTarget.value} />
+      </form>
+			<h3>
+				<a href="/About">About</a>
+			</h3>
+		</span>
+	</nav>
 </header>
 
 <style lang="scss">
@@ -22,19 +36,35 @@
 		background-color: white;
 		z-index: 99;
 		padding: 6px 12px;
-    & nav {
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 1150px;
-      margin: 0 auto;
-      height: 56px;
+    & span {
       display: flex;
+      height: 100%;
+      align-items: center;
+      & form {
+        margin: 20px;
+        & input {
+          padding: 12px;
+          border-radius: 8px;
+          border: 1px solid rgb(31, 31, 31);
+          &:focus {
+            outline: 1px solid orange;
+          }
+        }
+      }
     }
-    & a {
-      color: rgb(31, 31, 31);
-      font-weight: 300;
-    }
+		& nav {
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			max-width: 1150px;
+			margin: 0 auto;
+			height: 56px;
+			display: flex;
+		}
+		& a {
+			color: rgb(31, 31, 31);
+			font-weight: 300;
+		}
 		& img {
 			height: 56px;
 			filter: grayscale(1);

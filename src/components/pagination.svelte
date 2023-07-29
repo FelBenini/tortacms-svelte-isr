@@ -14,7 +14,7 @@
       <p>{i + 1}</p>
     {/if}
     {#if i + 1 != actualPage}
-      <a on:click={() => handlePageChange(i + 1)} href={`./?page=${i + 1}`}>{i + 1}</a>
+      <a on:click={() => handlePageChange(i + 1)} href={`${$page.url.pathname}?page=${i + 1}`}>{i + 1}</a>
     {/if}
 {/each}
 </div>
