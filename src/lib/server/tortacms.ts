@@ -1,8 +1,8 @@
 import { TORTACMS_HOST } from "$env/static/private"
 
 export class TortaController {
-  public static fetchAllPosts = async () => {
-    const response = await fetch(`${TORTACMS_HOST}/api/posts`)
+  public static fetchAllPosts = async (page: string | number = 1) => {
+    const response = await fetch(`${TORTACMS_HOST}/api/posts?page=${page}`)
     const posts = await response.json()
     return {
       posts: posts.posts,

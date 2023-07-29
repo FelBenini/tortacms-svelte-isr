@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Postcard from "../components/postcard.svelte";
+	import Pagination from "../components/pagination.svelte";
+import Postcard from "../components/postcard.svelte";
 
 	export let data;
 </script>
@@ -11,6 +12,7 @@
 	  <Postcard url={post.postUrl} title={post.title} img={post.backgroundImage} />
   {/each}
 </div>
+<Pagination numOfPages={data.pages}/>
 </section>
 
 <style lang='scss'>
