@@ -13,7 +13,7 @@
   />
 </svelte:head>
 
-<div>
+<section>
 <h1 class="bigTitle">{data.title}</h1>
 
 {#if data.backgroundImage}
@@ -21,7 +21,7 @@
 {/if}
 
 <Markdown {source}/>
-</div>
+</section>
 
 <style>
   .bigTitle {
@@ -38,12 +38,12 @@
     margin-bottom: 2.3rem;
   }
 
-  div {
+  section {
     width: 92%;
     max-width: 1050px;
     margin: 0 auto;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    min-height: 100dvh;
+    min-height: calc(100dvh - 72px);
     margin-top: -56px;
     padding: 0px 2%;
     padding-top: 56px;
